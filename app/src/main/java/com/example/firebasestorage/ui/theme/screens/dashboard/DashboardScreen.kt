@@ -1,6 +1,8 @@
 package com.example.firebasestorage.ui.theme.screens.dashboard
 
+
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.firebasestorage.R
+import com.example.firebasestorage.navigation.ROUT_CLOTHING
 
 @Composable
 fun DashboardScreen(navController: NavHostController){
@@ -63,8 +66,8 @@ fun DashboardScreen(navController: NavHostController){
             Row {
                 Card (
                     modifier = Modifier
-                        .size(width = 160.dp, height = 120.dp),
-                    elevation = 10.dp
+                        .size(width = 160.dp, height = 120.dp).clickable{navController.navigate(ROUT_CLOTHING)},
+                    elevation = 10.dp,
                 ){
                     Column (modifier = Modifier.padding(15.dp)){
                         Box(

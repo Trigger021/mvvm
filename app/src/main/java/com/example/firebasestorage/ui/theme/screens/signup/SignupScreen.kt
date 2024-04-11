@@ -15,7 +15,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.firebasestorage.data.AuthViewModel
 import com.example.firebasestorage.navigation.ROUT_LOGIN
-import com.example.firebasestorage.navigation.ROUT_SIGNUP
 
 @Composable
 fun SignupScreen(navController: NavHostController) {

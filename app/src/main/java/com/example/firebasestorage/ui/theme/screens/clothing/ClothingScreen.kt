@@ -3,7 +3,6 @@ package com.example.firebasestorage.ui.theme.screens.clothing
 import android.content.Intent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,6 +16,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Card
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -42,7 +42,7 @@ fun ClothingScreen(navController: NavHostController){
     Column (modifier = Modifier.fillMaxSize()){
         val mContext = LocalContext.current
         TopAppBar(
-            title = { Text(text = "Clothing section") },
+            title = { Text(text = "Clothing section", color = Color.White) },
             backgroundColor = Color.Cyan
         )
         //Box
@@ -79,77 +79,278 @@ fun ClothingScreen(navController: NavHostController){
         Column (
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
-                .padding(20.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(10.dp),
         ){
             //Row 1
-            Row {
-                Column {
-                    Image(painter = painterResource(id = R.drawable.img_10),
-                        contentDescription = "Shirt",
-                        modifier = Modifier.size(width = 180.dp, height = 200.dp),)
-                    Text(text = "Shirt 1", fontSize = 20.sp)
-                    Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
-                    Row {
-                        OutlinedButton(
-                            onClick = {   val simToolKitLaunchIntent =
-                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                                simToolKitLaunchIntent?.let { mContext.startActivity(it) }
-                            },
-                            shape = RoundedCornerShape(5.dp),
-                            border = BorderStroke(1.dp, Color.Black),
-                        ) {
-                            Text(text = "PAY", color = Color.Black)
+            Row (modifier = Modifier.fillMaxWidth()){
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_10),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
                         }
-                        Spacer(modifier = Modifier.width(40.dp))
-                        OutlinedButton(
-                            onClick = {
-                                val callIntent= Intent(Intent.ACTION_DIAL)
-                                callIntent.data="tel:0791923440".toUri()
-                                mContext.startActivity(callIntent)
-                            },
-                            shape = RoundedCornerShape(5.dp),
-                            border = BorderStroke(1.dp, Color.Black),
-                        ) {
-                            Text(text = "Call", color = Color.Black)
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
                         }
                     }
                 }
-                Spacer(modifier = Modifier.width(20.dp))
-                Column {
-                    Image(painter = painterResource(id = R.drawable.img_10),
-                        contentDescription = "Shirt",
-                        modifier = Modifier.size(width = 180.dp, height = 200.dp),)
-                    Text(text = "Shirt 1", fontSize = 20.sp)
-                    Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
-                    Row {
-                        OutlinedButton(
-                            onClick = {   val simToolKitLaunchIntent =
-                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                                simToolKitLaunchIntent?.let { mContext.startActivity(it) }
-                            },
-                            shape = RoundedCornerShape(5.dp),
-                            border = BorderStroke(1.dp, Color.Black),
-                        ) {
-                            Text(text = "PAY", color = Color.Black)
+                Spacer(modifier = Modifier.width(6.dp))
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_8),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
                         }
-                        Spacer(modifier = Modifier.width(40.dp))
-                        OutlinedButton(
-                            onClick = {
-                                val callIntent= Intent(Intent.ACTION_DIAL)
-                                callIntent.data="tel:0791923440".toUri()
-                                mContext.startActivity(callIntent)
-                            },
-                            shape = RoundedCornerShape(5.dp),
-                            border = BorderStroke(1.dp, Color.Black),
-                        ) {
-                            Text(text = "Call", color = Color.Black)
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
                         }
                     }
                 }
             }
             //End of row 1
+            Spacer(modifier = Modifier.height(6.dp))
+            //Row 1
+            Row (modifier = Modifier.fillMaxWidth()){
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_9),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.width(6.dp))
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_11),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
+                        }
+                    }
+                }
+            }
+            //End of row 1
+            Spacer(modifier = Modifier.height(6.dp))
+            //Row 1
+            Row (modifier = Modifier.fillMaxWidth()){
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_12),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.width(6.dp))
+                Card {
+                    Column (modifier = Modifier.padding(5.dp)){
+                        Box(
+                            modifier = Modifier.size(width = 180.dp, height = 200.dp),
+
+                            ){
+                            Image(
+                                painter = painterResource(id = R.drawable.img_13),
+                                contentDescription = "Shirt",
+                                contentScale = ContentScale.FillBounds,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(text = "Shirt 1", fontSize = 20.sp)
+                        Text(text = "Ksh 680", fontSize = 20.sp, color = Color.LightGray)
+                        Row (Modifier.padding(2.dp)) {
+                            OutlinedButton(
+                                onClick = {   val simToolKitLaunchIntent =
+                                    mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                    simToolKitLaunchIntent?.let { mContext.startActivity(it) }
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "PAY", color = Color.Black)
+                            }
+                            Spacer(modifier = Modifier.width(36.dp))
+                            OutlinedButton(
+                                onClick = {
+                                    val callIntent= Intent(Intent.ACTION_DIAL)
+                                    callIntent.data="tel:0791923440".toUri()
+                                    mContext.startActivity(callIntent)
+                                },
+                                shape = RoundedCornerShape(5.dp),
+                                border = BorderStroke(1.dp, Color.Black),
+                            ) {
+                                Text(text = "Call", color = Color.Black)
+                            }
+                        }
+                    }
+                }
+            }
+            //End of row 1
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }

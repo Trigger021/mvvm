@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Firebasestorage</string>
+    <string name="app_name">firebasestorage</string>
     <string name="title_activity_about_screen">AboutScreen</string>
 </resources>

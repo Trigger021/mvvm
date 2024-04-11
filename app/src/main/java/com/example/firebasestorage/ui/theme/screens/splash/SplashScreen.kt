@@ -24,9 +24,7 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.firebasestorage.R
-import com.example.firebasestorage.navigation.ROUT_CLOTHING
 import com.example.firebasestorage.navigation.ROUT_DASHBOARD
-import com.example.firebasestorage.navigation.ROUT_LOGIN
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -41,7 +39,7 @@ fun SplashScreen(navController: NavHostController){
         val coroutine = rememberCoroutineScope()
         coroutine.launch {
             delay(2000)
-            navController.navigate(ROUT_CLOTHING)
+            navController.navigate(ROUT_DASHBOARD)
         }
         //Lottie Animation
         val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.splash))
